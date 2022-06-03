@@ -68,13 +68,24 @@ async function fetchAndDisplayNowPlayingMovies() {
 
 // searchForm.addEventListener('submit', handleFormSubmit);
 
+// Handlers
 async function handleLoadMoreClick(event) {
   currentApiPage++;
   await fetchAndDisplayNowPlayingMovies()
 }
 
+async function handleMouseEnterOnSearchBtn(event) {
+  searchInput.classList.add('search-input-wide');
+}
+
+async function handleMouseLeaveOnSearchBtn(event) {
+  searchInput.classList.remove('search-input-wide');
+}
+
 window.onload = () => {
   loadMoreMoviesBtn.addEventListener("click", handleLoadMoreClick);
+  // searchInput.addEventListener('mouseenter', handleMouseEnterOnSearchBtn);
+  // searchInput.addEventListener('mouseleave', handleMouseLeaveOnSearchBtn);
 
   fetchAndDisplayNowPlayingMovies();
 }
