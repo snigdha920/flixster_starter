@@ -6,8 +6,6 @@ body,
 h1,
 h2,
 h3,
-h4,
-h5,
 p,
 button,
 input {
@@ -19,8 +17,6 @@ input {
 h1,
 h2,
 h3,
-h4,
-h5,
 p,
 button {
   color: white;
@@ -138,7 +134,6 @@ input {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   row-gap: 20px;
   column-gap: 30px;
-  justify-items: center;
 }
 
 .movie-card {
@@ -158,10 +153,6 @@ input {
 
 .movie-card > h3 {
   margin: 15px 0 10px;
-}
-
-.movie-card > p {
-  margin: 0;
 }
 
 @media screen and (max-width: 1500px) {
