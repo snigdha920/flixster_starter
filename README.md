@@ -12,6 +12,8 @@ Deployed Application (optional): [Flixster Deployed Site](https://snigdha920.git
 
 <img width="1552" alt="Screenshot 2022-06-04 at 4 49 24 AM" src="https://user-images.githubusercontent.com/62167899/171966160-c7b040e3-f0e0-4ed8-8f06-f6703a0d484c.png">
 
+<img width="1552" alt="image" src="https://user-images.githubusercontent.com/62167899/171966291-878e1f2d-9413-43a2-8939-eb1af235f140.png">
+
 
 #### CORE FEATURES
 
