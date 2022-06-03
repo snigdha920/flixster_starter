@@ -101,6 +101,7 @@ input {
 .search-input-wrapper > #search-input {
   background-color: rgb(226 232 240);
   width: 100%;
+  outline: none;
 }
 
 .search-input-wrapper:hover {
