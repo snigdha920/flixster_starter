@@ -8,35 +8,6 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 ### Application Features
 
-#### Steps
-
-1. Init
-
-   - [x] connect styles.css and script.js with my html file
-   - [x] test the connection
-
-2. Set up the html structure + CSS
-
-   - [ ] create movie grid, card, title, movie poster, votes
-   - [ ] load more button
-   - [ ] search button + close seach button
-   - [ ] fill all these in with dummy data
-
-3. Set up the API call in script.js
-
-   - [ ] Call the API (investigate structure of the response)
-   - [ ] Test
-
-4. Use Dynamic HTML for movies
-
-   - [ ] Use dynamic html for movie card
-   - [ ] Dynamic html for load more button
-
-5. Dynamic HTML for search button
-   - [ ] Insert the search elements in a `search-results` class
-   - [ ] Remove `movie-grid` class
-   - [ ] Remove `search-results` class on clicking on `close-search-btn` (if it exists) put `movie-grid` class back (if it doesn't exist)
-
 #### CORE FEATURES
 
 - [x] User can view a list of current movies from The Movie Database API as a grid view
@@ -57,7 +28,7 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
   - The results from the search should be displayed on the page
   - There should be a close icon with an id of `close-search-btn` that exits the search, clears results, and shows the current movies displayed previously
 - [ ] Website accounts for basic HTML/CSS accessibility features
-- [ ] Website should be responsive
+- [x] Website should be responsive
 
 #### STRETCH FEATURES
 
