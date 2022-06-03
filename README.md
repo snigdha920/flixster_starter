@@ -67,6 +67,8 @@ Change the way my project responded to a particular event:
    If we want to optimise like a beast, I suppose we could also implement a cache to store the results of a previously executed search query. The next time the user looks for the same query - we could display the data from the cache while fetching and updating data from the server.
 
    This is 100% overkill, since the API is fast and the application is small - probably a pattern for larger scale projects.
+   
+2. The url I'm using to fetch the poster images isn't exactly how it's specified in the docs. In the docs, they ask to get the `base_url` from another API call, and use that to fetch the poster images. However, the `base_url` that is given in the docs works for 99% of the cases. So I've avoided the additional overhead of the API call which would make the UI lag a bit. 
 
 Additional features:
 
