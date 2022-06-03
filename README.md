@@ -61,14 +61,14 @@ The course content was perfectly enough to solve this assignment for me.
 
 Change the way my project responded to a particular event:
 
-1. Currently, when I search for a project - my `Load more` button will still get the "Now playing". I could hide this button entirely.
-   Ideally, I would like to load more results for the particular query. It would be implemented very similar to keeping track of pages for the `Now playing`, with one difference. When the user clicks on back or closes the search we would set the initial page number for search query results back to 1.
+1. Currently, when I search for a project - my `Load more` button will still get the "Now playing" movies. I could hide this button entirely.
+   Ideally, I would like to load more results for the particular search query. It would be implemented very similar to keeping track of pages for the `Now playing`, with one difference. When the user clicks on back or closes the search we would set the initial page number for search query results back to 1.
 
    If we want to optimise like a beast, I suppose we could also implement a cache to store the results of a previously executed search query. The next time the user looks for the same query - we could display the data from the cache while fetching and updating data from the server.
 
    This is 100% overkill, since the API is fast and the application is small - probably a pattern for larger scale projects.
    
-2. The url I'm using to fetch the poster images isn't exactly how it's specified in the docs. In the docs, they ask to get the `base_url` from another API call, and use that to fetch the poster images. However, the `base_url` that is given in the docs works for 99% of the cases. So I've avoided the additional overhead of the API call which would make the UI lag a bit. 
+2. The url I'm using to fetch the poster images doesn't exactly follow how the doc tells us to fetch images. In the docs, they ask to get the `base_url` from another API call, and use that to fetch the poster images. However, the `base_url` that is given for fetching the example in the docs works for 99% of the cases. So I've avoided the additional overhead of the API call, taken a bit of a shortcut. 
 
 Additional features:
 
