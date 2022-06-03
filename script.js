@@ -27,12 +27,19 @@ async function getMoviesNowPlaying() {
   return jsonResponse.results
 }
 
+async function searchMovieByQueryString(searchQuery) {
+  const response = await fetch(`${movieApiHost}/search/movie?api_key=${apiKey}&query=${encodeURI(searchQuery)}`)
+  const jsonResponse = await response.json();
+
+  return jsonResponse.results
+}
+
 /** Render list of results. */
 function displayResults(results) {
   const moviesHTMLString = results
     .map(
       (movie) => `
-      <div class="movie-card">
+      <div class="movie-card" id="${results.id}">
         <img class="movie-poster" src="${moviePosterApiHost}/${moviePosterWidth}${movie.poster_path}?api_key=${apiKey}"/>
         <h3 class="movie-title">${movie.title}</h3>
         <p class="movie-votes">⭐️ ${movie.vote_average}</p>
@@ -54,19 +61,15 @@ async function fetchAndDisplayNowPlayingMovies() {
   displayResults(results)
 }
 
-/** On form submit, get results and add to list. */
-// async function handleFormSubmit(event) {
-//     event.preventDefault();
-//     gifAreaDiv.innerHTML = '';
-//     currentSearchTerm = searchInput.value;
-//     const results = await getResults(currentSearchTerm);
-//     displayResults(results);
-//     searchInput.value = '';
-//     currentApiPage++;
-//     showMeMoreBtn.classList.remove('hidden');
-// }
-
-// searchForm.addEventListener('submit', handleFormSubmit);
+/** On form submit, clear the list, get results and add to list. */
+async function handleSearchFormSubmit(event) {
+  event.preventDefault();
+  moviesGrid.innerHTML = '';
+  currentSearchTerm = searchInput.value;
+  const results = await searchMovieByQueryString(currentSearchTerm);
+  displayResults(results);
+  searchInput.value = '';
+}
 
 // Handlers
 async function handleLoadMoreClick(event) {
@@ -76,6 +79,7 @@ async function handleLoadMoreClick(event) {
 
 window.onload = () => {
   loadMoreMoviesBtn.addEventListener("click", handleLoadMoreClick);
+  searchForm.addEventListener('submit', handleSearchFormSubmit)
 
   fetchAndDisplayNowPlayingMovies();
 }

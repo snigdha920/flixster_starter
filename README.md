@@ -52,7 +52,12 @@ Add your response here
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
-Add your response here
+Additional features:
+
+1. Support different languages, since the Movies API provides support for different languages
+2. Could have a filter `Children only`, since the API returns whether the movie is only for adults or not
+3. On each movie card, have a small play button which would render an `iframe` instead of the movie poster `img`
+4. Caraosel of images for each movie in the modal we see after clicking the movie card. The API has an endpoint to fetch some images for a movie.
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
