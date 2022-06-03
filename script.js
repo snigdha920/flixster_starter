@@ -74,18 +74,8 @@ async function handleLoadMoreClick(event) {
   await fetchAndDisplayNowPlayingMovies()
 }
 
-async function handleMouseEnterOnSearchBtn(event) {
-  searchInput.classList.add('search-input-wide');
-}
-
-async function handleMouseLeaveOnSearchBtn(event) {
-  searchInput.classList.remove('search-input-wide');
-}
-
 window.onload = () => {
   loadMoreMoviesBtn.addEventListener("click", handleLoadMoreClick);
-  // searchInput.addEventListener('mouseenter', handleMouseEnterOnSearchBtn);
-  // searchInput.addEventListener('mouseleave', handleMouseLeaveOnSearchBtn);
 
   fetchAndDisplayNowPlayingMovies();
 }
