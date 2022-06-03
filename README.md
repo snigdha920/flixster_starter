@@ -8,6 +8,11 @@ Deployed Application (optional): [Flixster Deployed Site](https://snigdha920.git
 
 ### Application Features
 
+<img width="1552" alt="Screenshot 2022-06-04 at 4 49 18 AM" src="https://user-images.githubusercontent.com/62167899/171966146-62ebbede-de8c-4bae-9fb0-656cb50302d9.png">
+
+<img width="1552" alt="Screenshot 2022-06-04 at 4 49 24 AM" src="https://user-images.githubusercontent.com/62167899/171966160-c7b040e3-f0e0-4ed8-8f06-f6703a0d484c.png">
+
+
 #### CORE FEATURES
 
 - [x] User can view a list of current movies from The Movie Database API as a grid view
@@ -71,7 +76,7 @@ Additional features:
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-NA
+  NA
 
 ### Open-source libraries used
 
