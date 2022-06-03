@@ -7,12 +7,14 @@ const moviePosterWidth = 'w400'
 // Global Variables
 var currentApiPage = 1
 var currentSearchTerm = ''
+var moviesBeforeSearch = ''
 
 // Page Elements
 const searchForm = document.getElementById('search-form')
 const searchInput = document.getElementById('search-input')
 const moviesGrid = document.getElementById('movies-grid')
 const loadMoreMoviesBtn = document.getElementById('load-more-movies-btn')
+const closeSearchBtn = document.getElementById('close-search-btn')
 
 /** Get results from API. */
 async function getMoviesNowPlaying() {
@@ -64,11 +66,19 @@ async function fetchAndDisplayNowPlayingMovies() {
 /** On form submit, clear the list, get results and add to list. */
 async function handleSearchFormSubmit(event) {
   event.preventDefault();
+
+  // Save the movies displayed before search
+  moviesBeforeSearch = moviesGrid.innerHTML
+
+  // Clear display
   moviesGrid.innerHTML = '';
+
+  // Search for movies by query
   currentSearchTerm = searchInput.value;
   const results = await searchMovieByQueryString(currentSearchTerm);
+
+  // Display Results
   displayResults(results);
-  searchInput.value = '';
 }
 
 // Handlers
@@ -77,9 +87,19 @@ async function handleLoadMoreClick(event) {
   await fetchAndDisplayNowPlayingMovies()
 }
 
+function handleCloseSearchBtnClick(event) {
+  if (currentSearchTerm.length === 0) return;
+
+  currentSearchTerm = ''
+  searchInput.value = ''
+  moviesGrid.innerHTML = moviesBeforeSearch
+  return;
+}
+
 window.onload = () => {
   loadMoreMoviesBtn.addEventListener("click", handleLoadMoreClick);
-  searchForm.addEventListener('submit', handleSearchFormSubmit)
+  searchForm.addEventListener('submit', handleSearchFormSubmit);
+  closeSearchBtn.addEventListener('click', handleCloseSearchBtnClick);
 
   fetchAndDisplayNowPlayingMovies();
 }
