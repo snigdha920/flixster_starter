@@ -42,7 +42,7 @@ function displayResults(results) {
     .map(
       (movie) => `
       <div class="movie-card" id="${results.id}">
-        <img class="movie-poster" src="${moviePosterApiHost}/${moviePosterWidth}${movie.poster_path}?api_key=${apiKey}"/>
+        <img class="movie-poster" src="${moviePosterApiHost}/${moviePosterWidth}${movie.poster_path}?api_key=${apiKey}" alt="Poster for movie ${movie.title}"/>
         <h3 class="movie-title">${movie.title}</h3>
         <p class="movie-votes">⭐️ ${movie.vote_average}</p>
       </div>
