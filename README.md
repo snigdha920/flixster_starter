@@ -2,9 +2,9 @@
 
 Submitted by: **Snigdha**
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: **4** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): [Flixster Deployed Site](https://snigdha920.github.io/flixster_starter/)
 
 ### Application Features
 
@@ -48,20 +48,30 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+The course content was perfectly enough to solve this assignment for me.
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+
+Change the way my project responded to a particular event:
+
+1. Currently, when I search for a project - my `Load more` button will still get the "Now playing". I could hide this button entirely.
+   Ideally, I would like to load more results for the particular query. It would be implemented very similar to keeping track of pages for the `Now playing`, with one difference. When the user clicks on back or closes the search we would set the initial page number for search query results back to 1.
+
+   If we want to optimise like a beast, I suppose we could also implement a cache to store the results of a previously executed search query. The next time the user looks for the same query - we could display the data from the cache while fetching and updating data from the server.
+
+   This is 100% overkill, since the API is fast and the application is small - probably a pattern for larger scale projects.
 
 Additional features:
 
 1. Support different languages, since the Movies API provides support for different languages
 2. Could have a filter `Children only`, since the API returns whether the movie is only for adults or not
-3. On each movie card, have a small play button which would render an `iframe` instead of the movie poster `img`
+3. On each movie card, have a small play button which would render an `iframe` instead of the movie poster `img` and play the trailer on hover
 4. Caraosel of images for each movie in the modal we see after clicking the movie card. The API has an endpoint to fetch some images for a movie.
+5. Instead of showing just the `Now Playing` movies, we could convert it to a dropdown which has many other categories alongside `Now playing` like `Top Rated`, `Popular`, `Upcoming`, etc.
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+NA
 
 ### Open-source libraries used
 
