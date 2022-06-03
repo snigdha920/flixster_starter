@@ -1,10 +1,3 @@
-/* box-model */
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   background: #080239;
@@ -13,15 +6,30 @@ body {
   margin: 0;
 }
 
-button {
-  border: 0;
-}
-
 h1 {
   font-style: normal;
   font-weight: 800;
   font-size: 56px;
   line-height: 60px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+button {
+  border: 0;
 }
 
 input {
@@ -62,4 +70,39 @@ input {
 #close-search-btn {
   width: 20px;
   height: 20px;
+}
+
+#movies-grid {
+  margin-top: 20px;
+  display: grid;
+  /* fix minimum size to 0 to prevent a grid blowout: https://css-tricks.com/preventing-a-grid-blowout/ */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 80px;
+  row-gap: 20px;
+  justify-items: center;
+}
+
+.movie-card {
+  border: 1px solid;
+  border-color: rgb(51 65 85);
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-card > img {
+  height: 400px;
+  width: 280px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.movie-card > h3 {
+  margin: 15px 0 10px;
+}
+
+.movie-card > p {
+  margin: 0;
 }

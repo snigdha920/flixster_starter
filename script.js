@@ -1,6 +1,8 @@
 // Global Constants
 const apiKey = 'fd5d3fc9471d39b2de5345ee738d7669'
 const movieApiHost = 'https://api.themoviedb.org/3'
+const moviePosterApiHost = 'https://image.tmdb.org/t/p'
+const moviePosterWidth = 'w400'
 
 // Global Variables
 var currentApiPage = 1
@@ -31,9 +33,9 @@ function displayResults(results) {
     .map(
       (movie) => `
       <div class="movie-card">
-        <img class="movie-poster" src="https://image.tmdb.org/t/p/w500${movie.poster_path}?api_key=${apiKey}"/>
+        <img class="movie-poster" src="${moviePosterApiHost}/${moviePosterWidth}${movie.poster_path}?api_key=${apiKey}"/>
         <h3 class="movie-title">${movie.title}</h3>
-        <p class="movie-votes">${movie.vote_average}</p>
+        <p class="movie-votes">⭐️ ${movie.vote_average}</p>
       </div>
     `,
     )
@@ -68,7 +70,7 @@ async function fetchAndDisplayNowPlayingMovies() {
 
 async function handleLoadMoreClick(event) {
   currentApiPage++;
-  await displayNowPlayingMovies()
+  await fetchAndDisplayNowPlayingMovies()
 }
 
 window.onload = () => {
